@@ -118,10 +118,14 @@
 /mob/living/simple_mob/vore/rabbit/white/lennie
 	name = "Lennie"
 	desc = "A large but somewhat dumb-looking rabbit. Has a little collar that says 'Lennie'!"
+	vore_bump_chance = 0
+	vore_pounce_chance = 0
 
 /mob/living/simple_mob/vore/rabbit/brown/george
 	name = "George"
 	desc = "A small and quick bunny with a restless expression in its eyes. Has a little collar that says 'George'!"
+	vore_bump_chance = 0
+	vore_pounce_chance = 0
 
 /mob/living/simple_mob/vore/rabbit/killer
 	tt_desc = "Oryctolagus cuniculus homicidam"
