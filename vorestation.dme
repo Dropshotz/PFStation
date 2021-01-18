@@ -3624,6 +3624,8 @@
 #include "code\modules\vore\trycatch_vr.dm"
 #include "code\modules\vore\appearance\preferences_vr.dm"
 #include "code\modules\vore\appearance\spider_taur_powers_vr.dm"
+#include "code\modules\vore\appearance\sprite_accessories_ph.dm"
+#include "code\modules\vore\appearance\sprite_accessories_taur_ph.dm"
 #include "code\modules\vore\appearance\sprite_accessories_taur_vr.dm"
 #include "code\modules\vore\appearance\sprite_accessories_vr.dm"
 #include "code\modules\vore\appearance\update_icons_vr.dm"
