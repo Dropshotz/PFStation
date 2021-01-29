@@ -61,7 +61,7 @@
 	..()
 	var/obj/O = assembly ? get_turf(assembly) : loc
 	O.visible_message("<span class='notice'>\icon[O]  [stuff_to_display]</span>")
-
+/*
 /obj/item/integrated_circuit/output/light
 	name = "light"
 	desc = "A basic light which can be toggled on/off when pulsed."
@@ -119,7 +119,7 @@
 
 	..()
 
-/*
+*/
 /obj/item/integrated_circuit/output/light
 	name = "light"
 	desc = "This light can turn on and off on command."
@@ -154,7 +154,7 @@
 /obj/item/integrated_circuit/output/light/advanced
 	name = "advanced light"
 	desc = "This light can turn on and off on command, in any color, and in various brightness levels."
-	extended_desc = "The brightness is limited to values between 1 and 6."
+	extended_desc = "The brightness is limited to values between 1 and 8."
 	icon_state = "light_adv"
 	complexity = 8
 	inputs = list(
@@ -162,6 +162,7 @@
 		"brightness" = IC_PINTYPE_NUMBER
 	)
 	outputs = list()
+	
 	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 	origin_tech = list(TECH_ENGINEERING = 3, TECH_DATA = 3)
 
@@ -170,7 +171,7 @@
 	var/brightness = get_pin_data(IC_INPUT, 2)
 
 	if(new_color && isnum(brightness))
-		brightness = CLAMP(brightness, 0, 6)
+		brightness = CLAMP(brightness, 0, 8)
 		light_rgb = new_color
 		light_brightness = brightness
 
@@ -178,7 +179,7 @@
 
 /obj/item/integrated_circuit/output/light/advanced/on_data_written()
 	update_lighting()
-*/
+
 /obj/item/integrated_circuit/output/sound
 	name = "speaker circuit"
 	desc = "A miniature speaker is attached to this component."

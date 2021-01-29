@@ -107,7 +107,7 @@
 	icon_state = "colorpad"
 	complexity = 2
 	inputs = list()
-	outputs = list("color entered" = IC_PINTYPE_STRING)
+	outputs = list("color entered" = IC_PINTYPE_COLOR)
 	activators = list("on entered" = IC_PINTYPE_PULSE_OUT)
 	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 	power_draw_per_use = 4
