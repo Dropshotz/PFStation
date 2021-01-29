@@ -100,7 +100,7 @@
 			push_data()
 			activate_pin(1)
 			return IC_TOPIC_REFRESH
-
+/*
 /obj/item/integrated_circuit/input/colorpad
 	name = "color pad"
 	desc = "This small color pad allows someone to input a hexadecimal color into the system."
@@ -123,6 +123,26 @@
 			push_data()
 			activate_pin(1)
 			return IC_TOPIC_REFRESH
+*/
+
+/obj/item/integrated_circuit/input/colorpad
+	name = "color pad"
+	desc = "This small color pad allows someone to input a hexadecimal color into the system."
+	icon_state = "colorpad"
+	complexity = 2
+	can_be_asked_input = 1
+	inputs = list()
+	outputs = list("color entered" = IC_PINTYPE_COLOR)
+	activators = list("on entered" = IC_PINTYPE_PULSE_OUT)
+	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
+	power_draw_per_use = 4
+
+/obj/item/integrated_circuit/input/colorpad/ask_for_input(mob/user)
+	var/new_color = input(user, "Enter a color, please.", "Color pad", get_pin_data(IC_OUTPUT, 1)) as color|null
+	if(new_color && CanInteract(user, GLOB.tgui_physical_state))
+		set_pin_data(IC_OUTPUT, 1, new_color)
+		push_data()
+		activate_pin(1)
 
 /obj/item/integrated_circuit/input/med_scanner
 	name = "integrated medical analyser"
