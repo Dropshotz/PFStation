@@ -100,7 +100,7 @@
 			push_data()
 			activate_pin(1)
 			return IC_TOPIC_REFRESH
-/*
+
 /obj/item/integrated_circuit/input/colorpad
 	name = "color pad"
 	desc = "This small color pad allows someone to input a hexadecimal color into the system."
@@ -123,8 +123,8 @@
 			push_data()
 			activate_pin(1)
 			return IC_TOPIC_REFRESH
-*/
 
+/*
 /obj/item/integrated_circuit/input/colorpad
 	name = "color pad"
 	desc = "This small color pad allows someone to input a hexadecimal color into the system."
@@ -143,7 +143,7 @@
 		set_pin_data(IC_OUTPUT, 1, new_color)
 		push_data()
 		activate_pin(1)
-
+*/
 /obj/item/integrated_circuit/input/med_scanner
 	name = "integrated medical analyser"
 	desc = "A very small version of the common medical analyser. This allows the machine to track some vital signs."

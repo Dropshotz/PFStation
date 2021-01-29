@@ -61,7 +61,7 @@
 	..()
 	var/obj/O = assembly ? get_turf(assembly) : loc
 	O.visible_message("<span class='notice'>\icon[O]  [stuff_to_display]</span>")
-/*
+
 /obj/item/integrated_circuit/output/light
 	name = "light"
 	desc = "A basic light which can be toggled on/off when pulsed."
@@ -95,7 +95,7 @@
 
 /obj/item/integrated_circuit/output/light/advanced
 	name = "advanced light"
-	desc = "A light that takes a hexadecimal color value and a brightness value, and can be toggled on/off by pulsing it."
+	desc = "A light that takes a hexadecimal color value and a brightness value, and can be toggled on/off by pulsing it. Can go from 0 to 8"
 	icon_state = "light_adv"
 	complexity = 8
 	inputs = list(
@@ -113,13 +113,13 @@
 	var/brightness = get_pin_data(IC_INPUT, 2)
 
 	if(new_color && isnum(brightness))
-		brightness = clamp(brightness, 0, 1)
+		brightness = clamp(brightness, 0, 8)
 		light_rgb = new_color
 		light_brightness = brightness
 
 	..()
-*/
 
+/*
 /obj/item/integrated_circuit/output/light
 	name = "light"
 	desc = "This light can turn on and off on command."
@@ -178,7 +178,7 @@
 
 /obj/item/integrated_circuit/output/light/advanced/on_data_written()
 	update_lighting()
-
+*/
 /obj/item/integrated_circuit/output/sound
 	name = "speaker circuit"
 	desc = "A miniature speaker is attached to this component."
