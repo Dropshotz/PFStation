@@ -465,6 +465,7 @@
 "zM" = (/obj/structure/catwalk,/obj/machinery/atmospherics/pipe/simple/hidden/aux{dir = 4},/turf/simulated/floor/plating/eris/under,/area/glace/decktwo/fore_central_maint)
 "zO" = (/obj/machinery/light{dir = 8},/turf/simulated/floor/tiled/eris/steel/cargo,/area/glace/decktwo/luna_bath)
 "zQ" = (/obj/effect/floor_decal/corner/pink,/obj/effect/floor_decal/corner/red{dir = 1},/obj/structure/cable{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 1},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/turf/simulated/floor/tiled/white,/area/glace/decktwo/kitchen)
+"zZ" = (/obj/effect/overmap/visitable/ship/glace{name = "Glacial Peak"},/turf/space,/area/space)
 "Ad" = (/obj/effect/floor_decal/spline/fancy/wood{dir = 8},/turf/simulated/floor/wood,/area/glace/decktwo/david_room)
 "Ai" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply{dir = 1},/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 1},/turf/simulated/floor/tiled/eris/steel/gray_perforated,/area/glace/decktwo/aft_central_hall)
 "Al" = (/obj/machinery/light{dir = 8},/turf/simulated/floor/wood,/area/glace/decktwo/misc_one)
@@ -866,7 +867,6 @@
 "Zl" = (/obj/effect/floor_decal/borderfloorwhite{dir = 4},/obj/effect/floor_decal/corner/green/border{dir = 4},/turf/simulated/floor/tiled/white,/area/glace/decktwo/kitchen)
 "Zo" = (/obj/effect/floor_decal/borderfloorwhite/shifted,/obj/effect/floor_decal/corner/green/border/shifted,/obj/effect/floor_decal/corner/red{dir = 8},/turf/simulated/floor/tiled/white,/area/glace/decktwo/kitchen)
 "Zp" = (/obj/structure/catwalk,/turf/simulated/floor/plating/eris/under,/area/glace/decktwo/fore_central_maint)
-"Zq" = (/obj/effect/overmap/visitable/ship/glace,/turf/space,/area/space)
 "Zw" = (/obj/structure/window/reinforced/tinted{dir = 1},/obj/item/device/flashlight/lamp/green,/obj/effect/floor_decal/spline/fancy/wood/cee{dir = 4},/obj/structure/table/fancyblack,/obj/machinery/light{dir = 4},/obj/machinery/light_switch{pixel_x = 25},/turf/simulated/floor/wood/sif,/area/glace/decktwo/luna_room)
 "ZG" = (/obj/structure/window/reinforced{dir = 1},/obj/structure/flora/ausbushes/sparsegrass,/turf/simulated/floor/grass,/area/glace/decktwo/fore_central_hall)
 "ZN" = (/obj/structure/disposalpipe/segment{dir = 4; icon_state = "pipe-c"},/turf/simulated/floor/plating/eris/under,/area/glace/decktwo/aft_starport_maint)
@@ -1011,6 +1011,6 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaZqaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aazZaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 Ynaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 "}
