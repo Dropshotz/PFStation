@@ -39,7 +39,7 @@
 	var/is_wet = TRUE						// Is this belly's insides made of slimy parts?
 	var/wet_loop = TRUE						// Does the belly have a fleshy loop playing?
 	var/obj/item/weapon/storage/vore_egg/ownegg	// Is this belly creating an egg?
-	var/egg_type = "egg"					// Default egg type and path.
+	var/egg_type = "Egg"					// Default egg type and path.
 	var/egg_path = /obj/item/weapon/storage/vore_egg
 
 	//I don't think we've ever altered these lists. making them static until someone actually overrides them somewhere.
@@ -162,7 +162,8 @@
 		"is_wet",
 		"wet_loop",
 		"belly_fullscreen",
-		"disable_hud"
+		"disable_hud",
+		"egg_type"
 		)
 
 /obj/belly/Initialize()
@@ -360,9 +361,15 @@
 		var/raw_message = pick(examine_messages)
 		var/total_bulge = 0
 
-		formatted_message = replacetext(raw_message, "%belly" ,lowertext(name))
-		formatted_message = replacetext(formatted_message, "%pred" ,owner)
-		formatted_message = replacetext(formatted_message, "%prey" ,english_list(contents))
+		var/living_count = 0
+		for(var/mob/living/L in contents)
+			living_count++
+
+		formatted_message = replacetext(raw_message, "%belly", lowertext(name))
+		formatted_message = replacetext(formatted_message, "%pred", owner)
+		formatted_message = replacetext(formatted_message, "%prey", english_list(contents))
+		formatted_message = replacetext(formatted_message, "%count", contents.len)
+		formatted_message = replacetext(formatted_message, "%countprey", living_count)
 		for(var/mob/living/P in contents)
 			if(!P.absorbed) //This is required first, in case there's a person absorbed and not absorbed in a stomach.
 				total_bulge += P.size_multiplier
@@ -581,13 +588,21 @@
 	var/struggle_outer_message = pick(struggle_messages_outside)
 	var/struggle_user_message = pick(struggle_messages_inside)
 
+	var/living_count = 0
+	for(var/mob/living/L in contents)
+		living_count++
+
 	struggle_outer_message = replacetext(struggle_outer_message, "%pred", owner)
 	struggle_outer_message = replacetext(struggle_outer_message, "%prey", R)
 	struggle_outer_message = replacetext(struggle_outer_message, "%belly", lowertext(name))
+	struggle_outer_message = replacetext(struggle_outer_message, "%count", contents.len)
+	struggle_outer_message = replacetext(struggle_outer_message, "%countprey", living_count)
 
 	struggle_user_message = replacetext(struggle_user_message, "%pred", owner)
 	struggle_user_message = replacetext(struggle_user_message, "%prey", R)
 	struggle_user_message = replacetext(struggle_user_message, "%belly", lowertext(name))
+	struggle_user_message = replacetext(struggle_user_message, "%count", contents.len)
+	struggle_user_message = replacetext(struggle_user_message, "%countprey", living_count)
 
 	struggle_outer_message = "<span class='alert'>[struggle_outer_message]</span>"
 	struggle_user_message = "<span class='alert'>[struggle_user_message]</span>"
@@ -743,6 +758,7 @@
 	dupe.wet_loop = wet_loop
 	dupe.belly_fullscreen = belly_fullscreen
 	dupe.disable_hud = disable_hud
+	dupe.egg_type = egg_type
 
 	//// Object-holding variables
 	//struggle_messages_outside - strings
