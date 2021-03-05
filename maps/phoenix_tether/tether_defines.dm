@@ -204,7 +204,9 @@
 	lateload_single_pick = null //Nothing right now.
 
 	planet_datums_to_make = list(/datum/planet/virgo3b,
-								/datum/planet/virgo4)
+
+/datum/planet/virgo4)
+
 
 /datum/map/tether/perform_map_generation()
 
@@ -233,7 +235,10 @@
 	expected_z_levels = list(
 		Z_LEVEL_BEACH
 	)
-
+/datum/planet/virgo4
+	expected_z_levels = list(
+		Z_LEVEL_BEACH
+	)
 // Overmap represetation of tether
 /obj/effect/overmap/visitable/sector/virgo3b
 	name = "Virgo 3B"
