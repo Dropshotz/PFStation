@@ -1,6 +1,6 @@
 ///////////////////////////////////
 //// Talon Jobs
-
+/*
 /datum/department/talon
 	name = DEPARTMENT_TALON
 	short_name = "Talon"
@@ -218,3 +218,4 @@
 	messenger_bag = /obj/item/weapon/storage/backpack/messenger/engi
 	uniform = /obj/item/clothing/under/rank/atmospheric_technician
 	belt = /obj/item/weapon/storage/belt/utility/atmostech
+*/
