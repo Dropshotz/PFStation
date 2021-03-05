@@ -35,15 +35,13 @@
 
 /datum/map/tether/New()
 	..()
-	var/choice = pickweight(list(/*
+	var/choice = pickweight(list(
 		"title" = 10,
 		"tether" = 50,
 		"tether_night" = 50,
 		"tether2_night" = 50,
 		"tether2_dog" = 1,
 		"tether2_love" = 1
-		*/
-		"phoenix" = 100
 	))
 	if(choice)
 		lobby_screens = list(choice)
@@ -61,8 +59,8 @@
 
 	zlevel_datum_type = /datum/map_z_level/tether
 
-	lobby_icon = 'icons/misc/title_pf.dmi'
-	lobby_screens = list("phoenix")
+	lobby_icon = 'icons/misc/title_vr.dmi'
+	lobby_screens = list("tether2_night")
 	id_hud_icons = 'icons/mob/hud_jobs_vr.dmi'
 
 	holomap_smoosh = list(list(
@@ -73,7 +71,7 @@
 		Z_LEVEL_SPACE_MID,
 		Z_LEVEL_SPACE_HIGH))
 
-	station_name  = "NRF Rising Phoenix"
+	station_name  = "NSB Adephagia"
 	station_short = "Tether"
 	dock_name     = "Virgo-3B Colony"
 	dock_type     = "surface"
@@ -177,8 +175,8 @@
 		list("Listening Post")
 		)
 
-	ai_shell_restricted = FALSE
-	ai_shell_allowed_levels = list(/*
+	ai_shell_restricted = TRUE
+	ai_shell_allowed_levels = list(
 		Z_LEVEL_SURFACE_LOW,
 		Z_LEVEL_SURFACE_MID,
 		Z_LEVEL_SURFACE_HIGH,
@@ -190,7 +188,7 @@
 		Z_LEVEL_SOLARS,
 		Z_LEVEL_MISC,
 		Z_LEVEL_BEACH
-		*/)
+		)
 
 	belter_docked_z = 		list(Z_LEVEL_SPACE_HIGH)
 	belter_transit_z =	 	list(Z_LEVEL_MISC)
@@ -205,7 +203,8 @@
 
 	lateload_single_pick = null //Nothing right now.
 
-	planet_datums_to_make = list(/datum/planet/virgo3b)
+	planet_datums_to_make = list(/datum/planet/virgo3b,
+								/datum/planet/virgo4)
 
 /datum/map/tether/perform_map_generation()
 
@@ -229,6 +228,10 @@
 		Z_LEVEL_SURFACE_MINE,
 		Z_LEVEL_SOLARS,
 		Z_LEVEL_PLAINS
+		)
+/datum/planet/virgo4
+	expected_z_levels = list(
+		Z_LEVEL_BEACH
 	)
 
 // Overmap represetation of tether
