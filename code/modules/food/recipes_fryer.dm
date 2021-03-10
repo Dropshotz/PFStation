@@ -13,16 +13,6 @@
 	)
 	result = /obj/item/weapon/reagent_containers/food/snacks/cheesyfries
 
-/datum/recipe/chilicheesefries //moved here by pheonix station
-	appliance = FRYER
-	items = list(
-		/obj/item/weapon/reagent_containers/food/snacks/fries,
-		/obj/item/weapon/reagent_containers/food/snacks/cheesewedge,
-		/obj/item/weapon/reagent_containers/food/snacks/hotchili
-	)
-	reagent_mix = RECIPE_REAGENT_REPLACE //Simplify end product
-	result = /obj/item/weapon/reagent_containers/food/snacks/chilicheesefries
-
 /datum/recipe/jpoppers
 	appliance = FRYER
 	fruit = list("chili" = 1)
@@ -39,9 +29,16 @@
 
 /datum/recipe/bellefritter
 	appliance = FRYER
-	reagents = list("sugar" = 5, "batter" = 10)
+	coating = /datum/reagent/nutriment/coating/batter
+	reagents = list("sugar" = 5)
 	items = list(/obj/item/weapon/reagent_containers/food/snacks/frostbelle)
 	result = /obj/item/weapon/reagent_containers/food/snacks/bellefritter
+
+/datum/recipe/onionrings
+	appliance = FRYER
+	coating = /datum/reagent/nutriment/coating/batter
+	fruit = list("onion" = 1)
+	result = /obj/item/weapon/reagent_containers/food/snacks/onionrings
 
 //Meaty Recipes
 //====================
@@ -96,6 +93,31 @@
 	reagent_mix = RECIPE_REAGENT_REPLACE //Simplify end product
 	result = /obj/item/weapon/reagent_containers/food/snacks/friedmushroom
 
+/datum/recipe/fishfingers
+	items = list(
+		/obj/item/weapon/reagent_containers/food/snacks/carpmeat,
+	)
+	coating = /datum/reagent/nutriment/coating/batter
+	result = /obj/item/weapon/reagent_containers/food/snacks/fishfingers
+	reagent_mix = RECIPE_REAGENT_REPLACE
+
+/datum/recipe/corn_dog
+	appliance = FRYER
+	items = list(
+		/obj/item/weapon/reagent_containers/food/snacks/sausage
+	)
+	fruit = list("corn" = 1)
+	coating = /datum/reagent/nutriment/coating/batter
+	result = /obj/item/weapon/reagent_containers/food/snacks/corn_dog
+
+/datum/recipe/sweet_and_sour
+	appliance = FRYER
+	items = list(
+		/obj/item/weapon/reagent_containers/food/snacks/bacon,
+		/obj/item/weapon/reagent_containers/food/snacks/cutlet
+	)
+	reagents = list("soysauce" = 5, "batter" = 10)
+	result = /obj/item/weapon/reagent_containers/food/snacks/sweet_and_sour
 
 //Sweet Recipes.
 //==================
@@ -155,30 +177,13 @@
 	result = /obj/item/weapon/reagent_containers/food/snacks/pisanggoreng
 	coating = /datum/reagent/nutriment/coating/batter
 
-/datum/recipe/corn_dog
-	appliance = FRYER
-	items = list(
-		/obj/item/weapon/reagent_containers/food/snacks/sausage
-	)
-	fruit = list("corn" = 1)
-	coating = /datum/reagent/nutriment/coating/batter
-	result = /obj/item/weapon/reagent_containers/food/snacks/corn_dog
-
-/datum/recipe/sweet_and_sour
-	appliance = FRYER
-	items = list(
-		/obj/item/weapon/reagent_containers/food/snacks/bacon,
-		/obj/item/weapon/reagent_containers/food/snacks/cutlet
-	)
-	reagents = list("soysauce" = 5, "batter" = 10)
-	result = /obj/item/weapon/reagent_containers/food/snacks/sweet_and_sour
-
+//VOREStation Add Start
 /datum/recipe/generalschicken
 	appliance = FRYER
 	reagents = list("capsaicin" = 2, "sugar" = 2, "batter" = 10)
 	items = list(
-		/obj/item/weapon/reagent_containers/food/snacks/meat/chicken, //edit to chicken
-		/obj/item/weapon/reagent_containers/food/snacks/meat/chicken
+		/obj/item/weapon/reagent_containers/food/snacks/meat,
+		/obj/item/weapon/reagent_containers/food/snacks/meat
 	)
 	result = /obj/item/weapon/reagent_containers/food/snacks/generalschicken
 
@@ -186,25 +191,10 @@
 	appliance = FRYER
 	reagents = list("capsaicin" = 5, "batter" = 10)
 	items = list(
-		/obj/item/weapon/reagent_containers/food/snacks/meat/chicken, //edit to chicken
-		/obj/item/weapon/reagent_containers/food/snacks/meat/chicken,
-		/obj/item/weapon/reagent_containers/food/snacks/meat/chicken,
-		/obj/item/weapon/reagent_containers/food/snacks/meat/chicken
+		/obj/item/weapon/reagent_containers/food/snacks/meat,
+		/obj/item/weapon/reagent_containers/food/snacks/meat,
+		/obj/item/weapon/reagent_containers/food/snacks/meat,
+		/obj/item/weapon/reagent_containers/food/snacks/meat
 	)
 	result = /obj/item/weapon/storage/box/wings //This is kinda like the donut box.
-
-//pheonix station moves
-/datum/recipe/onionrings
-	appliance = FRYER
-	fruit = list("onion" = 1)
-	coating = /datum/reagent/nutriment/coating/batter
-	result = /obj/item/weapon/reagent_containers/food/snacks/onionrings
-
-/datum/recipe/nugget
-	appliance = FRYER
-	reagents = list("flour" = 5)
-	items = list(
-		/obj/item/weapon/reagent_containers/food/snacks/meat/chicken
-	)
-	reagent_mix = RECIPE_REAGENT_REPLACE
-	result = /obj/item/weapon/reagent_containers/food/snacks/nugget
+//VOREStation Add End
