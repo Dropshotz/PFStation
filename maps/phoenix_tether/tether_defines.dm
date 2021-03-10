@@ -36,19 +36,22 @@
 /datum/map/tether/New()
 	..()
 	var/choice = pickweight(list(
+		/*
 		"title" = 10,
 		"tether" = 50,
 		"tether_night" = 50,
 		"tether2_night" = 50,
 		"tether2_dog" = 1,
 		"tether2_love" = 1
+		*/
+		"phoenix" = 100
 	))
 	if(choice)
 		lobby_screens = list(choice)
 
 /datum/map/tether
 	name = "Virgo"
-	full_name = "NSB Adephagia"
+	full_name = "Phoenix Fire"
 	path = "tether"
 
 	use_overmap = TRUE
@@ -59,8 +62,8 @@
 
 	zlevel_datum_type = /datum/map_z_level/tether
 
-	lobby_icon = 'icons/misc/title_vr.dmi'
-	lobby_screens = list("tether2_night")
+	lobby_icon = 'icons/misc/title_pf.dmi'
+	lobby_screens = list("phoenix")
 	id_hud_icons = 'icons/mob/hud_jobs_vr.dmi'
 
 	holomap_smoosh = list(list(
@@ -71,7 +74,7 @@
 		Z_LEVEL_SPACE_MID,
 		Z_LEVEL_SPACE_HIGH))
 
-	station_name  = "NSB Adephagia"
+	station_name  = "Phoenix Fire"
 	station_short = "Tether"
 	dock_name     = "Virgo-3B Colony"
 	dock_type     = "surface"
