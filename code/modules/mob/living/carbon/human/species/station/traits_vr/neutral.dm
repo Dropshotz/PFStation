@@ -1,3 +1,6 @@
+#define ORGANICS	1
+#define SYNTHETICS	2
+
 /datum/trait/metabolism_up
 	name = "Fast Metabolism"
 	desc = "You process ingested and injected reagents faster, but get hungry faster (Teshari speed)."
@@ -63,7 +66,8 @@
 	name = "Bloodsucker"
 	desc = "Makes you unable to gain nutrition from anything but blood. To compenstate, you get fangs that can be used to drain blood from prey."
 	cost = 0
-	var_changes = list("gets_food_nutrition" = 0) //The verb is given in human.dm
+	custom_only = FALSE
+	var_changes = list("organic_food_coeff" = 0) //The verb is given in human.dm
 
 /datum/trait/bloodsucker/apply(var/datum/species/S,var/mob/living/carbon/human/H)
 	..(S,H)
@@ -73,6 +77,7 @@
 	name = "Succubus Drain"
 	desc = "Makes you able to gain nutrition from draining prey in your grasp."
 	cost = 0
+	custom_only = FALSE
 
 /datum/trait/succubus_drain/apply(var/datum/species/S,var/mob/living/carbon/human/H)
 	..(S,H)
@@ -84,6 +89,7 @@
 	name = "Feeder"
 	desc = "Allows you to feed your prey using your own body."
 	cost = 0
+	custom_only = FALSE
 
 /datum/trait/feeder/apply(var/datum/species/S,var/mob/living/carbon/human/H)
 	..(S,H)
@@ -92,7 +98,8 @@
 /datum/trait/hard_vore
 	name = "Brutal Predation"
 	desc = "Allows you to tear off limbs & tear out internal organs."
-	cost = 0 //I would make this cost a point, since it has some in game value, but there are easier, less damaging ways to perform the same functions.
+	cost = 0
+	custom_only = FALSE
 
 /datum/trait/hard_vore/apply(var/datum/species/S,var/mob/living/carbon/human/H)
 	..(S,H)
@@ -102,6 +109,7 @@
 	name = "Trash Can"
 	desc = "Allows you to dispose of some garbage on the go instead of having to look for a bin or littering like an animal."
 	cost = 0
+	custom_only = FALSE
 	var_changes = list("trashcan" = 1)
 
 /datum/trait/trashcan/apply(var/datum/species/S,var/mob/living/carbon/human/H)
@@ -112,62 +120,156 @@
 	name = "Expensive Taste"
 	desc = "You only gain nutrition from raw ore and refined minerals. There's nothing that sates the appetite better than precious gems, exotic or rare minerals and you have damn fine taste. Anything else is beneath you."
 	cost = 0
-	var_changes = list("gets_food_nutrition" = 0, "eat_minerals" = 1)
+	custom_only = FALSE
+	var_changes = list("organic_food_coeff" = 0, "eat_minerals" = 1)
 
 /datum/trait/gem_eater/apply(var/datum/species/S,var/mob/living/carbon/human/H)
 	..(S,H)
 	H.verbs |= /mob/living/proc/eat_minerals
+	
+/datum/trait/synth_chemfurnace
+	name = "Biofuel Processor"
+	desc = "You are able to gain energy through consuming and processing normal food. Energy-dense foods such as protein bars and survival food will yield the best results."
+	cost = 0
+	custom_only = FALSE
+	can_take = SYNTHETICS
+	var_changes = list("organic_food_coeff" = 0, "synthetic_food_coeff" = 0.25)
 
 /datum/trait/glowing_eyes
 	name = "Glowing Eyes"
 	desc = "Your eyes show up above darkness. SPOOKY! And kinda edgey too."
 	cost = 0
+	custom_only = FALSE
 	var_changes = list("has_glowing_eyes" = 1)
 
 /datum/trait/glowing_body
 	name = "Glowing Body"
 	desc = "Your body glows about as much as a PDA light! Settable color and toggle in Abilities tab ingame."
 	cost = 0
+	custom_only = FALSE
+
 /datum/trait/glowing_body/apply(var/datum/species/S,var/mob/living/carbon/human/H)
 	..(S,H)
 	H.verbs |= /mob/living/proc/glow_toggle
 	H.verbs |= /mob/living/proc/glow_color
+
+
+//Allergen traits! Not available to any species with a base allergens var.
+/datum/trait/allergy
+	name = "Allergy: Gluten"
+	desc = "You're highly allergic to gluten proteins, which are found in most common grains."
+	cost = 0
+	custom_only = FALSE
+	var/allergen = GRAINS
+
+/datum/trait/allergy/apply(var/datum/species/S,var/mob/living/carbon/human/H)
+	S.allergens |= allergen
+	..(S,H)
+
+/datum/trait/allergy/meat
+	name = "Allergy: Meat"
+	desc = "You're highly allergic to just about any form of meat. You're probably better off just sticking to vegetables."
+	cost = 0
+	custom_only = FALSE
+	allergen = MEAT
+
+/datum/trait/allergy/fish
+	name = "Allergy: Fish"
+	desc = "You're highly allergic to fish. It's probably best to avoid seafood in general..."
+	cost = 0
+	custom_only = FALSE
+	allergen = FISH
+
+/datum/trait/allergy/fruit
+	name = "Allergy: Fruit"
+	desc = "You're highly allergic to fruit. Vegetables are fine, but you should probably read up on how to tell the difference."
+	cost = 0
+	custom_only = FALSE
+	allergen = FRUIT
+
+/datum/trait/allergy/vegetable
+	name = "Allergy: Vegetable"
+	desc = "You're highly allergic to vegetables. Fruit are fine, but you should probably read up on how to tell the difference."
+	cost = 0
+	custom_only = FALSE
+	allergen = VEGETABLE
+
+/datum/trait/allergy/nuts
+	name = "Allergy: Nuts"
+	desc = "You're highly allergic to hard-shell seeds, such as peanuts."
+	cost = 0
+	custom_only = FALSE
+	allergen = SEEDS
+
+/datum/trait/allergy/soy
+	name = "Allergy: Soy"
+	desc = "You're highly allergic to soybeans, and some other kinds of bean."
+	cost = 0
+	custom_only = FALSE
+	allergen = BEANS
+
+/datum/trait/allergy/dairy
+	name = "Allergy: Lactose"
+	desc = "You're highly allergic to lactose, and consequently, just about all forms of dairy."
+	cost = 0
+	custom_only = FALSE
+	allergen = DAIRY
+
+/datum/trait/allergy/fungi
+	name = "Allergy: Fungi"
+	desc = "You're highly allergic to Fungi such as mushrooms."
+	cost = 0
+	custom_only = FALSE
+	allergen = FUNGI
+
+/datum/trait/allergy/coffee
+	name = "Allergy: Coffee"
+	desc = "You're highly allergic to coffee in specific."
+	cost = 0
+	custom_only = FALSE
+	allergen = COFFEE
 
 // Spicy Food Traits, from negative to positive.
 /datum/trait/spice_intolerance_extreme
 	name = "Extreme Spice Intolerance"
 	desc = "Spicy (and chilly) peppers are three times as strong. (This does not affect pepperspray.)"
 	cost = 0
+	custom_only = FALSE
 	var_changes = list("spice_mod" = 3) // 300% as effective if spice_mod is set to 1. If it's not 1 in species.dm, update this!
 
 /datum/trait/spice_intolerance_basic
 	name = "Heavy Spice Intolerance"
 	desc = "Spicy (and chilly) peppers are twice as strong. (This does not affect pepperspray.)"
 	cost = 0
+	custom_only = FALSE
 	var_changes = list("spice_mod" = 2) // 200% as effective if spice_mod is set to 1. If it's not 1 in species.dm, update this!
 
 /datum/trait/spice_intolerance_slight
 	name = "Slight Spice Intolerance"
 	desc = "You have a slight struggle with spicy foods. Spicy (and chilly) peppers are one and a half times stronger. (This does not affect pepperspray.)"
 	cost = 0
+	custom_only = FALSE
 	var_changes = list("spice_mod" = 1.5) // 150% as effective if spice_mod is set to 1. If it's not 1 in species.dm, update this!
 
 /datum/trait/spice_tolerance_basic
 	name = "Spice Tolerance"
 	desc = "Spicy (and chilly) peppers are only three-quarters as strong. (This does not affect pepperspray.)"
 	cost = 0
+	custom_only = FALSE
 	var_changes = list("spice_mod" = 0.75) // 75% as effective if spice_mod is set to 1. If it's not 1 in species.dm, update this!
 
 /datum/trait/spice_tolerance_advanced
 	name = "Strong Spice Tolerance"
 	desc = "Spicy (and chilly) peppers are only half as strong. (This does not affect pepperspray.)"
 	cost = 0
+	custom_only = FALSE
 	var_changes = list("spice_mod" = 0.5) // 50% as effective if spice_mod is set to 1. If it's not 1 in species.dm, update this!
 
 /datum/trait/spice_immunity
 	name = "Extreme Spice Tolerance"
 	desc = "Spicy (and chilly) peppers are basically ineffective! (This does not affect pepperspray.)"
 	cost = 0
+	custom_only = FALSE
 	var_changes = list("spice_mod" = 0.25) // 25% as effective if spice_mod is set to 1. If it's not 1 in species.dm, update this!
 
 /*
@@ -176,36 +278,42 @@
 	name = "Liver of Air"
 	desc = "The only way you can hold a drink is if it's in your own two hands, and even then you'd best not inhale too deeply near it. Drinks are three times as strong."
 	cost = 0
+	custom_only = FALSE
 	var_changes = list("alcohol_mod" = 3) // 300% as effective if alcohol_mod is set to 1. If it's not 1 in species.dm, update this!
 
 /datum/trait/alcohol_intolerance_basic
 	name = "Liver of Lilies"
 	desc = "You have a hard time with alcohol. Maybe you just never took to it, or maybe it doesn't agree with you... either way, drinks are twice as strong."
 	cost = 0
+	custom_only = FALSE
 	var_changes = list("alcohol_mod" = 2) // 200% as effective if alcohol_mod is set to 1. If it's not 1 in species.dm, update this!
 
 /datum/trait/alcohol_intolerance_slight
 	name = "Liver of Tulips"
 	desc = "You have a slight struggle with alcohol. Drinks are one and a half times stronger."
 	cost = 0
+	custom_only = FALSE
 	var_changes = list("alcohol_mod" = 1.5) // 150% as effective if alcohol_mod is set to 1. If it's not 1 in species.dm, update this!
 
 /datum/trait/alcohol_tolerance_basic
 	name = "Liver of Iron"
 	desc = "You can hold drinks much better than those lily-livered land-lubbers! Arr! Drinks are only three-quarters as strong."
 	cost = 0
+	custom_only = FALSE
 	var_changes = list("alcohol_mod" = 0.75) // 75% as effective if alcohol_mod is set to 1. If it's not 1 in species.dm, update this!
 
 /datum/trait/alcohol_tolerance_advanced
 	name = "Liver of Steel"
 	desc = "Drinks tremble before your might! You can hold your alcohol twice as well as those blue-bellied barnacle boilers! Drinks are only half as strong."
 	cost = 0
+	custom_only = FALSE
 	var_changes = list("alcohol_mod" = 0.5) // 50% as effective if alcohol_mod is set to 1. If it's not 1 in species.dm, update this!
 
 /datum/trait/alcohol_immunity
 	name = "Liver of Durasteel"
 	desc = "You've drunk so much that most booze doesn't even faze you. It takes something like a Pan-Galactic or a pint of Deathbell for you to even get slightly buzzed."
 	cost = 0
+	custom_only = FALSE
 	var_changes = list("alcohol_mod" = 0.25) // 25% as effective if alcohol_mod is set to 1. If it's not 1 in species.dm, update this!
 // Alcohol Traits End Here.
 

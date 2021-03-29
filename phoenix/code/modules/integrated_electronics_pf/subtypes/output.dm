@@ -61,7 +61,7 @@
 	..()
 	var/obj/O = assembly ? get_turf(assembly) : loc
 	O.visible_message("<span class='notice'>\icon[O]  [stuff_to_display]</span>")
-
+/*
 /obj/item/integrated_circuit/output/light
 	name = "light"
 	desc = "A basic light which can be toggled on/off when pulsed."
@@ -95,7 +95,7 @@
 
 /obj/item/integrated_circuit/output/light/advanced
 	name = "advanced light"
-	desc = "A light that takes a hexadecimal color value and a brightness value, and can be toggled on/off by pulsing it."
+	desc = "A light that takes a hexadecimal color value and a brightness value, and can be toggled on/off by pulsing it. Can go from 0 to 8"
 	icon_state = "light_adv"
 	complexity = 8
 	inputs = list(
@@ -113,11 +113,72 @@
 	var/brightness = get_pin_data(IC_INPUT, 2)
 
 	if(new_color && isnum(brightness))
-		brightness = clamp(brightness, 0, 1)
+		brightness = clamp(brightness, 0, 8)
 		light_rgb = new_color
 		light_brightness = brightness
 
 	..()
+
+*/
+/obj/item/integrated_circuit/output/light
+	name = "light"
+	desc = "This light can turn on and off on command."
+	icon_state = "light"
+	complexity = 4
+	inputs = list()
+	outputs = list()
+	activators = list("toggle light" = IC_PINTYPE_PULSE_IN)
+	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
+	var/light_toggled = 0
+	var/light_brightness = 3
+	var/light_rgb = "#FFFFFF"
+	power_draw_idle = 0 // Adjusted based on brightness.
+
+/obj/item/integrated_circuit/output/light/do_work()
+	light_toggled = !light_toggled
+	update_lighting()
+
+/obj/item/integrated_circuit/output/light/proc/update_lighting()
+	if(light_toggled)
+		if(assembly)
+			assembly.set_light(l_range = light_brightness, l_power = light_brightness, l_color = light_rgb)
+	else
+		if(assembly)
+			assembly.set_light(0)
+	power_draw_idle = light_toggled ? light_brightness * light_brightness : 0 // Should be the same draw as regular lights.
+
+/obj/item/integrated_circuit/output/light/power_fail() // Turns off the flashlight if there's no power left.
+	light_toggled = FALSE
+	update_lighting()
+
+/obj/item/integrated_circuit/output/light/advanced
+	name = "advanced light"
+	desc = "This light can turn on and off on command, in any color, and in various brightness levels."
+	extended_desc = "The brightness is limited to values between 1 and 8."
+	icon_state = "light_adv"
+	complexity = 8
+	inputs = list(
+		"color" = IC_PINTYPE_COLOR,
+		"brightness" = IC_PINTYPE_NUMBER
+	)
+	outputs = list()
+	
+	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
+	origin_tech = list(TECH_ENGINEERING = 3, TECH_DATA = 3)
+
+/obj/item/integrated_circuit/output/light/advanced/update_lighting()
+	var/new_color = get_pin_data(IC_INPUT, 1)
+	var/brightness = get_pin_data(IC_INPUT, 2)
+
+	if(new_color && isnum(brightness))
+		brightness = CLAMP(brightness, 0, 8)
+		light_rgb = new_color
+		light_brightness = brightness
+
+	..()
+
+/obj/item/integrated_circuit/output/light/advanced/on_data_written()
+	update_lighting()
 
 /obj/item/integrated_circuit/output/sound
 	name = "speaker circuit"
