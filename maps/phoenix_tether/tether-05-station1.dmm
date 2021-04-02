@@ -8075,6 +8075,16 @@
 "aoO" = (
 /turf/simulated/wall/r_wall,
 /area/storage/emergency_storage/emergency4)
+"aoP" = (
+/obj/structure/table/reinforced,
+/obj/item/stack/material/plasteel{
+	amount = 30
+	},
+/obj/fiftyspawner/plastic,
+/obj/fiftyspawner/plastic,
+/obj/fiftyspawner/copper,
+/turf/simulated/floor/tiled,
+/area/engineering/workshop)
 "aoR" = (
 /obj/structure/grille,
 /obj/machinery/door/firedoor/border_only,
@@ -13734,6 +13744,7 @@
 	dir = 4;
 	icon_state = "steel_decals_central5"
 	},
+/mob/living/simple_mob/animal/passive/opossum/poppy,
 /turf/simulated/floor/tiled/monotile,
 /area/engineering/workshop)
 "azg" = (
@@ -15227,6 +15238,24 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge/secondary)
+"aBT" = (
+/obj/machinery/door/firedoor/glass,
+/obj/machinery/door/airlock/maintenance/command{
+	req_one_access = list(17)
+	},
+/obj/machinery/door/blast/regular{
+	closed_layer = 10;
+	density = 0;
+	dir = 8;
+	icon_state = "pdoor0";
+	id = "secondary_bridge_blast";
+	layer = 1;
+	name = "Secondary Command Office Blast Doors";
+	opacity = 0;
+	open_layer = 1
+	},
+/turf/simulated/floor,
+/area/bridge/secondary/teleporter)
 "aBU" = (
 /obj/machinery/door/airlock{
 	name = "Unit 2"
@@ -15274,6 +15303,7 @@
 	pixel_x = -22;
 	pixel_y = 22
 	},
+/obj/item/weapon/pipe_dispenser,
 /turf/simulated/floor/tiled,
 /area/crew_quarters/heads/chief)
 "aCd" = (
@@ -19505,15 +19535,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/storage/tools)
-"bkx" = (
-/obj/structure/table/reinforced,
-/obj/item/stack/material/plasteel{
-	amount = 30
-	},
-/obj/fiftyspawner/plastic,
-/obj/fiftyspawner/plastic,
-/turf/simulated/floor/tiled,
-/area/engineering/workshop)
 "bkU" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 9
@@ -20608,6 +20629,20 @@
 	},
 /turf/simulated/floor/carpet,
 /area/engineering/foyer)
+"bYJ" = (
+/obj/effect/floor_decal/techfloor{
+	dir = 10
+	},
+/obj/machinery/power/shield_generator/starter/ce,
+/turf/simulated/floor/tiled/techfloor,
+/area/crew_quarters/heads/chief)
+"bYK" = (
+/obj/effect/floor_decal/techfloor{
+	dir = 6
+	},
+/obj/machinery/power/shield_generator/starter/ce,
+/turf/simulated/floor/tiled/techfloor,
+/area/crew_quarters/heads/chief)
 "bYN" = (
 /obj/item/device/instrument/violin,
 /turf/simulated/floor,
@@ -21514,13 +21549,6 @@
 	},
 /turf/simulated/wall/r_wall,
 /area/engineering/gravity_lobby)
-"gLt" = (
-/obj/effect/floor_decal/techfloor{
-	dir = 10
-	},
-/obj/machinery/power/shield_generator/starter/ce,
-/turf/simulated/floor/tiled/techfloor,
-/area/crew_quarters/heads/chief)
 "gOd" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
@@ -21779,13 +21807,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/gravity_gen)
-"ijh" = (
-/obj/effect/floor_decal/techfloor{
-	dir = 6
-	},
-/obj/machinery/power/shield_generator/starter/ce,
-/turf/simulated/floor/tiled/techfloor,
-/area/crew_quarters/heads/chief)
 "ijz" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
@@ -29077,7 +29098,7 @@ bft
 bhj
 aRb
 aCd
-gLt
+bYJ
 aRb
 bZv
 bZv
@@ -29361,7 +29382,7 @@ aRX
 aVz
 aRb
 bYg
-ijh
+bYK
 aRb
 bZv
 bZv
@@ -29912,7 +29933,7 @@ aqM
 ath
 avd
 asA
-bkx
+aoP
 aqM
 akR
 auA
@@ -35207,7 +35228,7 @@ ayH
 aza
 ayR
 ayR
-awC
+aBT
 ail
 aDY
 acQ

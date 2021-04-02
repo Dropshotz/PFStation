@@ -21,12 +21,12 @@
 	cost = 0
 	var_changes = list("metabolic_rate" = 1.4, "hunger_factor" = 0.4, "metabolism" = 0.012) // +40% rate and 8x hunger (Double Teshari)
 	excludes = list(/datum/trait/metabolism_up, /datum/trait/metabolism_down)
-/* disabling cold adapted and head adapted
+
 /datum/trait/coldadapt
 	name = "Cold-Adapted"
 	desc = "You are able to withstand much colder temperatures than other species, and can even be comfortable in extremely cold environments. You are also more vulnerable to hot environments, and have a lower body temperature as a consequence of these adaptations."
 	cost = 0
-	var_changes = list("cold_level_1" = 200,  "cold_level_2" = 150, "cold_level_3" = 90, "breath_cold_level_1" = 180, "breath_cold_level_2" = 100, "breath_cold_level_3" = 60, "cold_discomfort_level" = 210, "heat_level_1" = 305, "heat_level_2" = 360, "heat_level_3" = 700, "breath_heat_level_1" = 345, "breath_heat_level_2" = 380, "breath_heat_level_3" = 780, "heat_discomfort_level" = 295, "body_temperature" = 290)
+	var_changes = list("cold_level_1" = 200,  "cold_level_2" = 150, "cold_level_3" = 90, "breath_cold_level_1" = 180, "breath_cold_level_2" = 100, "breath_cold_level_3" = 60, "cold_discomfort_level" = 210, "heat_level_1" = 330, "heat_level_2" = 380, "heat_level_3" = 700, "breath_heat_level_1" = 360, "breath_heat_level_2" = 400, "breath_heat_level_3" = 850, "heat_discomfort_level" = 295, "body_temperature" = 290)
 	excludes = list(/datum/trait/hotadapt)
 
 /datum/trait/hotadapt
@@ -35,7 +35,7 @@
 	cost = 0
 	var_changes = list("heat_level_1" = 420, "heat_level_2" = 460, "heat_level_3" = 1100, "breath_heat_level_1" = 440, "breath_heat_level_2" = 510, "breath_heat_level_3" = 1500, "heat_discomfort_level" = 390, "cold_level_1" = 280, "cold_level_2" = 220, "cold_level_3" = 140, "breath_cold_level_1" = 260, "breath_cold_level_2" = 240, "breath_cold_level_3" = 120, "cold_discomfort_level" = 280, "body_temperature" = 330)
 	excludes = list(/datum/trait/coldadapt)
-*/
+
 /datum/trait/autohiss_unathi
 	name = "Autohiss (Unathi)"
 	desc = "You roll your S's and x's"
@@ -168,66 +168,73 @@
 
 /datum/trait/allergy/meat
 	name = "Allergy: Meat"
-	desc = "You're highly allergic to just about any form of meat. You're probably better off just sticking to vegetables."
+	desc = "You're highly allergic to just about any form of meat. You're probably better off just sticking to vegetables. NB: By taking this trait, you acknowledge there is a risk your character may suffer a fatal reaction if exposed to this substance."
 	cost = 0
 	custom_only = FALSE
 	allergen = MEAT
 
 /datum/trait/allergy/fish
 	name = "Allergy: Fish"
-	desc = "You're highly allergic to fish. It's probably best to avoid seafood in general..."
+	desc = "You're highly allergic to fish. It's probably best to avoid seafood in general. NB: By taking this trait, you acknowledge there is a risk your character may suffer a fatal reaction if exposed to this substance."
 	cost = 0
 	custom_only = FALSE
 	allergen = FISH
 
 /datum/trait/allergy/fruit
 	name = "Allergy: Fruit"
-	desc = "You're highly allergic to fruit. Vegetables are fine, but you should probably read up on how to tell the difference."
+	desc = "You're highly allergic to fruit. Vegetables are fine, but you should probably read up on how to tell the difference. Remember, tomatoes are a fruit. NB: By taking this trait, you acknowledge there is a risk your character may suffer a fatal reaction if exposed to this substance."
 	cost = 0
 	custom_only = FALSE
 	allergen = FRUIT
 
 /datum/trait/allergy/vegetable
 	name = "Allergy: Vegetable"
-	desc = "You're highly allergic to vegetables. Fruit are fine, but you should probably read up on how to tell the difference."
+	desc = "You're highly allergic to vegetables. Fruit are fine, but you should probably read up on how to tell the difference. NB: By taking this trait, you acknowledge there is a risk your character may suffer a fatal reaction if exposed to this substance."
 	cost = 0
 	custom_only = FALSE
 	allergen = VEGETABLE
 
 /datum/trait/allergy/nuts
 	name = "Allergy: Nuts"
-	desc = "You're highly allergic to hard-shell seeds, such as peanuts."
+	desc = "You're highly allergic to hard-shell seeds, such as peanuts. NB: By taking this trait, you acknowledge there is a risk your character may suffer a fatal reaction if exposed to this substance."
 	cost = 0
 	custom_only = FALSE
 	allergen = SEEDS
 
 /datum/trait/allergy/soy
 	name = "Allergy: Soy"
-	desc = "You're highly allergic to soybeans, and some other kinds of bean."
+	desc = "You're highly allergic to soybeans, and some other kinds of bean. NB: By taking this trait, you acknowledge there is a risk your character may suffer a fatal reaction if exposed to this substance."
 	cost = 0
 	custom_only = FALSE
 	allergen = BEANS
 
 /datum/trait/allergy/dairy
 	name = "Allergy: Lactose"
-	desc = "You're highly allergic to lactose, and consequently, just about all forms of dairy."
+	desc = "You're highly allergic to lactose, and consequently, just about all forms of dairy. NB: By taking this trait, you acknowledge there is a risk your character may suffer a fatal reaction if exposed to this substance."
 	cost = 0
 	custom_only = FALSE
 	allergen = DAIRY
 
 /datum/trait/allergy/fungi
 	name = "Allergy: Fungi"
-	desc = "You're highly allergic to Fungi such as mushrooms."
+	desc = "You're highly allergic to fungi such as mushrooms. NB: By taking this trait, you acknowledge there is a risk your character may suffer a fatal reaction if exposed to this substance."
 	cost = 0
 	custom_only = FALSE
 	allergen = FUNGI
 
 /datum/trait/allergy/coffee
 	name = "Allergy: Coffee"
-	desc = "You're highly allergic to coffee in specific."
+	desc = "You're highly allergic to coffee in specific. NB: By taking this trait, you acknowledge there is a risk your character may suffer a fatal reaction if exposed to this substance."
 	cost = 0
 	custom_only = FALSE
 	allergen = COFFEE
+	
+/datum/trait/allergen_reduced_effect
+	name = "Reduced Allergen Reaction"
+	desc = "This trait halves the lethality of allergen reactions. If you don't have any allergens set, it does nothing. It does not apply to nonlethal reactions or special reactions (such as unathi drowsiness from sugars)."
+	cost = 0
+	custom_only = FALSE
+	var_changes = list("allergen_damage_severity" = 0.6)
 
 // Spicy Food Traits, from negative to positive.
 /datum/trait/spice_intolerance_extreme
@@ -272,7 +279,6 @@
 	custom_only = FALSE
 	var_changes = list("spice_mod" = 0.25) // 25% as effective if spice_mod is set to 1. If it's not 1 in species.dm, update this!
 
-/*
 // Alcohol Traits Start Here, from negative to positive.
 /datum/trait/alcohol_intolerance_advanced
 	name = "Liver of Air"
@@ -317,5 +323,99 @@
 	var_changes = list("alcohol_mod" = 0.25) // 25% as effective if alcohol_mod is set to 1. If it's not 1 in species.dm, update this!
 // Alcohol Traits End Here.
 
-commented out because we got our own
-*/
+// Body shape traits
+/datum/trait/taller
+	name = "Tall"
+	desc = "Your body is taller than average."
+	cost = 0
+	custom_only = FALSE
+	var_changes = list("icon_scale_y" = 1.09)
+	excludes = list(/datum/trait/tall, /datum/trait/short, /datum/trait/shorter)
+
+/datum/trait/taller/apply(var/datum/species/S,var/mob/living/carbon/human/H)
+	..(S,H)
+	H.update_transform()
+
+/datum/trait/tall
+	name = "Slightly Tall"
+	desc = "Your body is a bit taller than average."
+	cost = 0
+	custom_only = FALSE
+	var_changes = list("icon_scale_y" = 1.05)
+	excludes = list(/datum/trait/taller, /datum/trait/short, /datum/trait/shorter)
+
+/datum/trait/tall/apply(var/datum/species/S,var/mob/living/carbon/human/H)
+	..(S,H)
+	H.update_transform()
+
+/datum/trait/short
+	name = "Slightly Short"
+	desc = "Your body is a bit shorter than average."
+	cost = 0
+	custom_only = FALSE
+	var_changes = list("icon_scale_y" = 0.95)
+	excludes = list(/datum/trait/taller, /datum/trait/tall, /datum/trait/shorter)
+
+/datum/trait/short/apply(var/datum/species/S,var/mob/living/carbon/human/H)
+	..(S,H)
+	H.update_transform()
+
+/datum/trait/shorter
+	name = "Short"
+	desc = "Your body is shorter than average."
+	cost = 0
+	custom_only = FALSE
+	var_changes = list("icon_scale_y" = 0.915)
+	excludes = list(/datum/trait/taller, /datum/trait/tall, /datum/trait/short)
+
+/datum/trait/shorter/apply(var/datum/species/S,var/mob/living/carbon/human/H)
+	..(S,H)
+	H.update_transform()
+
+/datum/trait/obese
+	name = "Very Bulky"
+	desc = "Your body is much wider than average."
+	cost = 0
+	custom_only = FALSE
+	var_changes = list("icon_scale_x" = 1.095)
+	excludes = list(/datum/trait/fat, /datum/trait/thin, /datum/trait/thinner)
+
+/datum/trait/obese/apply(var/datum/species/S,var/mob/living/carbon/human/H)
+	..(S,H)
+	H.update_transform()
+
+/datum/trait/fat
+	name = "Bulky"
+	desc = "Your body is wider than average."
+	cost = 0
+	custom_only = FALSE
+	var_changes = list("icon_scale_x" = 1.054)
+	excludes = list(/datum/trait/obese, /datum/trait/thin, /datum/trait/thinner)
+
+/datum/trait/fat/apply(var/datum/species/S,var/mob/living/carbon/human/H)
+	..(S,H)
+	H.update_transform()
+
+/datum/trait/thin
+	name = "Thin"
+	desc = "Your body is thinner than average."
+	cost = 0
+	custom_only = FALSE
+	var_changes = list("icon_scale_x" = 0.945)
+	excludes = list(/datum/trait/fat, /datum/trait/obese, /datum/trait/thinner)
+
+/datum/trait/thin/apply(var/datum/species/S,var/mob/living/carbon/human/H)
+	..(S,H)
+	H.update_transform()
+
+/datum/trait/thinner
+	name = "Very Thin"
+	desc = "Your body is much thinner than average."
+	cost = 0
+	custom_only = FALSE
+	var_changes = list("icon_scale_x" = 0.905)
+	excludes = list(/datum/trait/fat, /datum/trait/obese, /datum/trait/thin)
+
+/datum/trait/thinner/apply(var/datum/species/S,var/mob/living/carbon/human/H)
+	..(S,H)
+	H.update_transform()

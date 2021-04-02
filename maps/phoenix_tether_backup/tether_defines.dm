@@ -35,7 +35,8 @@
 
 /datum/map/tether/New()
 	..()
-	var/choice = pickweight(list(/*
+	var/choice = pickweight(list(
+		/*
 		"title" = 10,
 		"tether" = 50,
 		"tether_night" = 50,
@@ -50,7 +51,7 @@
 
 /datum/map/tether
 	name = "Virgo"
-	full_name = "NSB Adephagia"
+	full_name = "Phoenix Fire"
 	path = "tether"
 
 	use_overmap = TRUE
@@ -73,7 +74,7 @@
 		Z_LEVEL_SPACE_MID,
 		Z_LEVEL_SPACE_HIGH))
 
-	station_name  = "NRF Rising Phoenix"
+	station_name  = "Phoenix Fire"
 	station_short = "Tether"
 	dock_name     = "Virgo-3B Colony"
 	dock_type     = "surface"
@@ -177,8 +178,8 @@
 		list("Listening Post")
 		)
 
-	ai_shell_restricted = FALSE
-	ai_shell_allowed_levels = list(/*
+	ai_shell_restricted = TRUE
+	ai_shell_allowed_levels = list(
 		Z_LEVEL_SURFACE_LOW,
 		Z_LEVEL_SURFACE_MID,
 		Z_LEVEL_SURFACE_HIGH,
@@ -190,7 +191,7 @@
 		Z_LEVEL_SOLARS,
 		Z_LEVEL_MISC,
 		Z_LEVEL_BEACH
-		*/)
+		)
 
 	belter_docked_z = 		list(Z_LEVEL_SPACE_HIGH)
 	belter_transit_z =	 	list(Z_LEVEL_MISC)
@@ -205,7 +206,10 @@
 
 	lateload_single_pick = null //Nothing right now.
 
-	planet_datums_to_make = list(/datum/planet/virgo3b)
+	planet_datums_to_make = list(/datum/planet/virgo3b,
+
+/datum/planet/virgo4)
+
 
 /datum/map/tether/perform_map_generation()
 
@@ -229,8 +233,15 @@
 		Z_LEVEL_SURFACE_MINE,
 		Z_LEVEL_SOLARS,
 		Z_LEVEL_PLAINS
+		)
+/datum/planet/virgo4
+	expected_z_levels = list(
+		Z_LEVEL_BEACH
 	)
-
+/datum/planet/virgo4
+	expected_z_levels = list(
+		Z_LEVEL_BEACH
+	)
 // Overmap represetation of tether
 /obj/effect/overmap/visitable/sector/virgo3b
 	name = "Virgo 3B"
