@@ -15,16 +15,13 @@
 #define Z_LEVEL_OFFMAP2						14
 #define Z_LEVEL_ROGUEMINE_1					15
 #define Z_LEVEL_ROGUEMINE_2					16
-#define Z_LEVEL_ROGUEMINE_3					17
-#define Z_LEVEL_ROGUEMINE_4					18
-#define Z_LEVEL_BEACH						19
-#define Z_LEVEL_BEACH_CAVE					20
-#define Z_LEVEL_AEROSTAT					21
-#define Z_LEVEL_AEROSTAT_SURFACE			22
-#define Z_LEVEL_DEBRISFIELD					23
-#define Z_LEVEL_GUTTERSITE					24
-#define Z_LEVEL_FUELDEPOT					25
-#define Z_LEVEL_GATEWAY						26
+#define Z_LEVEL_BEACH						17
+#define Z_LEVEL_BEACH_CAVE					18
+#define Z_LEVEL_AEROSTAT					19
+#define Z_LEVEL_AEROSTAT_SURFACE			20
+#define Z_LEVEL_DEBRISFIELD					21
+#define Z_LEVEL_FUELDEPOT					22
+#define Z_LEVEL_GATEWAY						23
 
 //Camera networks
 #define NETWORK_TETHER "Tether"
@@ -36,34 +33,31 @@
 /datum/map/tether/New()
 	..()
 	var/choice = pickweight(list(
-		/*
 		"title" = 10,
 		"tether" = 50,
 		"tether_night" = 50,
 		"tether2_night" = 50,
 		"tether2_dog" = 1,
 		"tether2_love" = 1
-		*/
-		"phoenix" = 100
 	))
 	if(choice)
 		lobby_screens = list(choice)
 
 /datum/map/tether
 	name = "Virgo"
-	full_name = "Phoenix Fire"
+	full_name = "NSB Adephagia"
 	path = "tether"
 
 	use_overmap = TRUE
 	overmap_z = Z_LEVEL_MISC
-	overmap_size = 35
-	overmap_event_areas = 34
+	overmap_size = 50
+	overmap_event_areas = 44
 	usable_email_tlds = list("virgo.nt")
 
 	zlevel_datum_type = /datum/map_z_level/tether
 
-	lobby_icon = 'icons/misc/title_pf.dmi'
-	lobby_screens = list("phoenix")
+	lobby_icon = 'icons/misc/title_vr.dmi'
+	lobby_screens = list("tether2_night")
 	id_hud_icons = 'icons/mob/hud_jobs_vr.dmi'
 
 	holomap_smoosh = list(list(
@@ -74,7 +68,7 @@
 		Z_LEVEL_SPACE_MID,
 		Z_LEVEL_SPACE_HIGH))
 
-	station_name  = "Phoenix Fire"
+	station_name  = "NSB Adephagia"
 	station_short = "Tether"
 	dock_name     = "Virgo-3B Colony"
 	dock_type     = "surface"
@@ -163,11 +157,10 @@
 	lateload_z_levels = list(
 		list("Tether - Misc","Tether - Underdark","Tether - Plains"), //Stock Tether lateload maps
 		list("Offmap Ship - Talon Z1","Offmap Ship - Talon Z2"),
-		list("Asteroid Belt 1","Asteroid Belt 2","Asteroid Belt 3","Asteroid Belt 4"),
+		list("Asteroid Belt 1","Asteroid Belt 2"),
 		list("Desert Planet - Z1 Beach","Desert Planet - Z2 Cave"),
 		list("Remmi Aerostat - Z1 Aerostat","Remmi Aerostat - Z2 Surface"),
 		list("Debris Field - Z1 Space"),
-		list("Gutter Site - Z1 Space"),
 		list("Fuel Depot - Z1 Space")
 		)
 
@@ -196,9 +189,7 @@
 	belter_docked_z = 		list(Z_LEVEL_SPACE_HIGH)
 	belter_transit_z =	 	list(Z_LEVEL_MISC)
 	belter_belt_z = 		list(Z_LEVEL_ROGUEMINE_1,
-						 		 Z_LEVEL_ROGUEMINE_2,
-						 	 	 Z_LEVEL_ROGUEMINE_3,
-								 Z_LEVEL_ROGUEMINE_4)
+						 		 Z_LEVEL_ROGUEMINE_2)
 
 //TFF 16/4/20 - mining outpost shuttle defines
 	mining_station_z =		list(Z_LEVEL_SPACE_HIGH)
@@ -207,9 +198,15 @@
 	lateload_single_pick = null //Nothing right now.
 
 	planet_datums_to_make = list(/datum/planet/virgo3b,
+								/datum/planet/virgo4)
 
-/datum/planet/virgo4)
-
+/datum/map/tether/get_map_info()
+	. = list()
+	. +=  "The [full_name] is an ancient ruin turned workplace in the Virgo-Erigone System, deep in the midst of the Coreward Periphery.<br>"
+	. +=  "Humanity has spread across the stars and has met many species on similar or even more advanced terms than them - it's a brave new world and many try to find their place in it . <br>"
+	. +=  "Though Virgo-Erigone is not important for the great movers and shakers, it sees itself in the midst of the interests of a reviving alien species of the Zorren, corporate and subversive interests and other exciting dangers the Periphery has to face.<br>"
+	. +=  "As an employee or contractor of NanoTrasen, operators of the Adephagia and one of the galaxy's largest corporations, you're probably just here to do a job."
+	return jointext(., "<br>")
 
 /datum/map/tether/perform_map_generation()
 
@@ -238,10 +235,7 @@
 	expected_z_levels = list(
 		Z_LEVEL_BEACH
 	)
-/datum/planet/virgo4
-	expected_z_levels = list(
-		Z_LEVEL_BEACH
-	)
+
 // Overmap represetation of tether
 /obj/effect/overmap/visitable/sector/virgo3b
 	name = "Virgo 3B"
