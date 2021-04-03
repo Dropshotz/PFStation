@@ -10,14 +10,14 @@
 	#include "arfs-6-asteroid.dmm"
 	#include "arfs-7-mining.dmm"
 	#include "arfs-8-underdark.dmm"
-	#include "residential/residential_arf.dmm"  //map chunks */
-
+	#include "residential/residential_arf.dmm"  //map chunks
+*/
 
 //	#include "residential/_residential_arf.dm"
 //	#include "residential/residential_keys_arf.dm"
 	#include "pfstation_defines.dm"
 //	#include "arfs_misc.dm"
-//	#include "arfs_areas.dm"
+	#include "pfstation_areas.dm"
 //	#include "arfs_shuttles.dm"
 //	#include "arfs_underdark.dm"
 //	#include "arfs_telecomms.dm"
