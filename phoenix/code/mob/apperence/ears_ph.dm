@@ -19,3 +19,11 @@
 	icon_state = "absolears"
 	do_colouration = 1
 	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/eevee
+	name = "Eevee"
+	desc = ""
+	icon = 'phoenix/icons/mob/player/ears_ph.dmi'
+	icon_state = "eevee_ear"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
