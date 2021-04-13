@@ -3870,6 +3870,7 @@
 #include "phoenix\code\mob\pokemon.dm"
 #include "phoenix\code\mob\verbs_ph.dm"
 #include "phoenix\code\mob\apperence\ears_ph.dm"
+#include "phoenix\code\mob\apperence\sprite_accessories.dm"
 #include "phoenix\code\mob\apperence\tails_ph.dm"
 #include "phoenix\code\mob\apperence\taurs_ph.dm"
 #include "phoenix\code\mob\apperence\wings_ph.dm"
