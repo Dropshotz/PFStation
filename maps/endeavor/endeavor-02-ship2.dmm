@@ -12023,6 +12023,9 @@
 	icon_state = "bordercolor"
 	},
 /obj/structure/disposalpipe/trunk,
+/obj/structure/sign/department/eng{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled,
 /area/engineering)
 "xE" = (
@@ -13559,7 +13562,9 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/engineering/atmos)
 "AT" = (
-/obj/machinery/vending/engivend,
+/obj/machinery/vending/engivend{
+	dir = 4
+	},
 /obj/machinery/light_switch{
 	dir = 4;
 	pixel_x = -28;
@@ -14368,10 +14373,6 @@
 /area/engineering/atmos/monitoring)
 "CG" = (
 /obj/structure/sign/department/atmos,
-/turf/simulated/wall/r_wall,
-/area/crew_quarters/heads/chief)
-"CH" = (
-/obj/structure/sign/department/eng,
 /turf/simulated/wall/r_wall,
 /area/crew_quarters/heads/chief)
 "CI" = (
@@ -15268,7 +15269,9 @@
 /turf/simulated/floor/plating,
 /area/maintenance/engineering)
 "Eo" = (
-/obj/machinery/vending/tool,
+/obj/machinery/vending/tool{
+	dir = 4
+	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
 	},
@@ -38116,7 +38119,7 @@ vx
 tH
 BR
 Gt
-CH
+wB
 xD
 Fj
 GY

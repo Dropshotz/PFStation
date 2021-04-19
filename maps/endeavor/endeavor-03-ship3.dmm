@@ -2177,7 +2177,9 @@
 /turf/simulated/floor/tiled,
 /area/hallway/deck_three/central)
 "dV" = (
-/obj/machinery/vending/snack,
+/obj/machinery/vending/snack{
+	dir = 8
+	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 5
 	},
@@ -2240,7 +2242,9 @@
 /turf/simulated/floor/tiled,
 /area/hallway/deck_three/central)
 "dZ" = (
-/obj/machinery/vending/coffee,
+/obj/machinery/vending/coffee{
+	dir = 8
+	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 6
 	},
@@ -2535,7 +2539,9 @@
 /turf/simulated/floor/tiled/hydro,
 /area/hydroponics)
 "ew" = (
-/obj/machinery/vending/hydronutrients,
+/obj/machinery/vending/hydronutrients{
+	dir = 1
+	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/green/border,
 /turf/simulated/floor/tiled/hydro,
@@ -2547,7 +2553,9 @@
 /turf/simulated/floor/tiled/hydro,
 /area/hydroponics)
 "ey" = (
-/obj/machinery/seed_storage/garden,
+/obj/machinery/seed_storage/garden{
+	dir = 1
+	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/green/border,
 /turf/simulated/floor/tiled/hydro,
@@ -4900,23 +4908,10 @@
 	},
 /turf/simulated/floor/wood,
 /area/library)
-"jm" = (
-/turf/simulated/floor/wood,
-/area/maintenance/library)
 "jo" = (
 /obj/structure/table/woodentable,
 /turf/simulated/floor/wood,
 /area/crew_quarters/fitness)
-"jq" = (
-/turf/simulated/floor/wood{
-	icon_state = "broken2"
-	},
-/area/maintenance/library)
-"jr" = (
-/turf/simulated/floor/wood{
-	icon_state = "broken3"
-	},
-/area/maintenance/library)
 "jt" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -8422,15 +8417,6 @@
 	name = "bath"
 	},
 /area/crew_quarters/captain)
-"rO" = (
-/obj/machinery/door/firedoor/glass,
-/obj/structure/grille,
-/obj/structure/window/reinforced/full,
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/library)
 "rP" = (
 /obj/machinery/shower{
 	dir = 8
@@ -9723,16 +9709,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/pool)
-"ur" = (
-/turf/simulated/floor/tiled/freezer,
-/area/maintenance/library)
-"us" = (
-/obj/machinery/door/firedoor/glass,
-/obj/machinery/door/airlock/freezer{
-	name = "Cold Room"
-	},
-/turf/simulated/floor/tiled/freezer,
-/area/maintenance/library)
 "ut" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9;
@@ -10202,7 +10178,9 @@
 	dir = 8;
 	pixel_x = -24
 	},
-/obj/machinery/vending/coffee,
+/obj/machinery/vending/coffee{
+	dir = 4
+	},
 /turf/simulated/floor/wood,
 /area/library)
 "ve" = (
@@ -11619,13 +11597,6 @@
 /obj/item/weapon/beach_ball,
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/pool)
-"ym" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/freezer,
-/area/maintenance/library)
 "yn" = (
 /obj/effect/floor_decal/corner/grey/diagonal,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -12094,11 +12065,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/first_aid_station_starboard)
-"zv" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/freezer,
-/area/maintenance/library)
 "zw" = (
 /obj/structure/railing{
 	dir = 4
@@ -12252,10 +12218,6 @@
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled,
 /area/hallway/deck_three/fore)
-"zL" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/freezer,
-/area/maintenance/library)
 "zM" = (
 /obj/machinery/photocopier,
 /obj/structure/extinguisher_cabinet{
@@ -36668,9 +36630,9 @@ mx
 mx
 mx
 mx
-jm
-jm
-jm
+jv
+jv
+jv
 kU
 kU
 kU
@@ -36867,12 +36829,12 @@ jv
 jv
 jv
 kU
-zv
-zL
-us
-jm
-jm
-jm
+jv
+jv
+jv
+jv
+jv
+jv
 kU
 Xm
 Ps
@@ -37069,12 +37031,12 @@ jv
 kT
 jv
 kU
-ym
-ur
-kU
-jm
-jq
-jm
+jv
+jv
+jv
+jv
+jv
+jv
 kU
 Ft
 yz
@@ -37271,12 +37233,12 @@ vg
 jv
 jv
 kU
-ur
-zL
-kU
-jm
-jm
-jm
+jv
+jv
+jv
+jv
+jv
+jv
 kU
 Ft
 yz
@@ -37476,9 +37438,9 @@ kU
 kU
 kU
 kU
-jm
-jm
-jr
+jv
+jv
+jv
 kU
 Ft
 yz
@@ -37678,9 +37640,9 @@ jv
 jv
 jv
 kU
-jm
-jm
-jm
+jv
+jv
+jv
 kU
 Ft
 yz
@@ -37880,9 +37842,9 @@ jv
 jv
 jv
 kU
-jm
-jm
-jm
+jv
+jv
+jv
 kU
 Ft
 yz
@@ -38083,7 +38045,7 @@ kS
 kS
 kS
 kS
-rO
+kS
 kS
 kU
 KR

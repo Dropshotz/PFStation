@@ -128,6 +128,12 @@
 	name = "\improper Weapons Testing Range"
 	icon_state = "firingrange"
 
+
+/area/rnd/research/breakroom
+	name = "\improper Break Room"
+	icon = 'icons/turf/areas_vr.dmi'
+	icon_state = "magblasqu"
+
 /area/construction/deckthree
 	name = "\improper Construction Area Deck Three"
 	icon_state = "yellow"
